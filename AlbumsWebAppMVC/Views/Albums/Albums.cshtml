@@ -4,3 +4,9 @@
 }
 
 <h2>Albums</h2>
+
+<form>
+    <label for="albums">Elige tu álbum favorito:</label>
+    @Html.DropDownList("albums", (IEnumerable<SelectListItem>)ViewBag.albums)
+    <input type="button" value="Visualizar álbum" formaction="GetPhotos" formmethod="post">
+</form>

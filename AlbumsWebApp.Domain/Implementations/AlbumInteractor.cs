@@ -1,4 +1,5 @@
 ﻿using AlbumsWebApp.Domain.DomainInterfaces;
+using AlbumsWebApp.Domain.Presenters;
 using AlbumsWebApp.Domain.RepositoryInterfaces;
 using System;
 
@@ -11,9 +12,10 @@ namespace AlbumsWebApp.Domain.Implementations
         {
             albumRepository = repository ?? throw new ArgumentNullException("albumRepository");
         }
-        public void GetAlbums()
+        public void GetAlbums(IAlbumPresenter presenter)
         {
             var albums = albumRepository.GetAlbums();
+            presenter.SetAlbumResponse(albums);
         }
     }
 }

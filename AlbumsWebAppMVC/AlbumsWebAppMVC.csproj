@@ -125,6 +125,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Presenters\AlbumPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +182,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlbumsWebApp.Data\AlbumsWebApp.Data.csproj">
+      <Project>{8474aba2-3a10-4407-8f21-59194e2085a2}</Project>
+      <Name>AlbumsWebApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlbumsWebApp.Domain\AlbumsWebApp.Domain.csproj">
+      <Project>{1a9a54fb-f274-4fb1-9376-d1f038804c17}</Project>
+      <Name>AlbumsWebApp.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

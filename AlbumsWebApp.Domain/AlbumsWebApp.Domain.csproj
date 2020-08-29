@@ -50,6 +50,7 @@
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Photo.cs" />
+    <Compile Include="Presenters\IAlbumPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryInterfaces\IAlbumRepository.cs" />
     <Compile Include="RepositoryInterfaces\ICommentRepository.cs" />
