@@ -30,6 +30,5 @@ namespace AlbumsWebAppMVC.Controllers
             ViewBag.albums = presenter.GetItems();
             return View();
         }
-
     }
 }
