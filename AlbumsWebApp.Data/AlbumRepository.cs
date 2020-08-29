@@ -9,7 +9,20 @@ namespace AlbumsWebApp.Data
     {
         public List<Album> GetAlbums()
         {
-            throw new NotImplementedException();
+            var albums = new List<Album>();
+            
+            for (int i = 0; i < 10; i++)
+            {
+                var album = new Album()
+                {
+                    Id = i,
+                    Name = $"Album {i}",
+                    Author = "The Rolling",
+                    ReleaseDate = new DateTime(2000,01,01)
+                };
+                albums.Add(album);
+            }
+            return albums;
         }
     }
 }

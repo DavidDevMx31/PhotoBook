@@ -12,7 +12,19 @@ namespace AlbumsWebApp.Data
     {
         public List<Comment> GetPhotoComments(int photoId)
         {
-            throw new NotImplementedException();
+            var comments = new List<Comment>();
+            for (int i = 0; i < 5; i++)
+            {
+                var comment = new Comment()
+                {
+                    Id = 1,
+                    Date = new DateTime(2020, 01, i),
+                    Description = "Amazing!",
+                    User = $"User {i}"
+                };
+                comments.Add(comment);
+            }
+            return comments;
         }
     }
 }
