@@ -1,17 +1,24 @@
 ﻿using AlbumsWebApp.Domain.DomainInterfaces;
+using AlbumsWebApp.Domain.RepositoryInterfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AlbumsWebApp.Domain.Implementations
 {
     public class PhotoInteractor : IPhotoInteractor
     {
+        private readonly IPhotoRepository photoRepository;
+        public PhotoInteractor(IPhotoRepository repository)
+        {
+            photoRepository = repository ?? throw new ArgumentNullException("photoRepository");
+        }
         public void GetPhotosForAlbum(int albumId)
         {
-            throw new NotImplementedException();
+            if (albumId <= 0)
+            { 
+                //Error
+                return;
+            }
+            var photos = photoRepository.GetAlbumPhotos(albumId);
         }
     }
 }

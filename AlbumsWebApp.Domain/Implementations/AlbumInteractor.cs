@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AlbumsWebApp.Domain.DomainInterfaces;
+using AlbumsWebApp.Domain.RepositoryInterfaces;
+using System;
 
 namespace AlbumsWebApp.Domain.Implementations
 {
-    class AlbumInteractor
+    public class AlbumInteractor : IAlbumInteractor
     {
+        private readonly IAlbumRepository albumRepository;
+        public AlbumInteractor(IAlbumRepository repository)
+        {
+            albumRepository = repository ?? throw new ArgumentNullException("albumRepository");
+        }
+        public void GetAlbums()
+        {
+            var albums = albumRepository.GetAlbums();
+        }
     }
 }
