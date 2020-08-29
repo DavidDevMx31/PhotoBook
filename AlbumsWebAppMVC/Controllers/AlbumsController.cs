@@ -17,6 +17,7 @@ namespace AlbumsWebAppMVC.Controllers
         private readonly AlbumPresenter presenter;
         private readonly IAlbumInteractor interactor;
         private readonly IAlbumRepository repository;
+
         public AlbumsController()
         {
             presenter = new AlbumPresenter();

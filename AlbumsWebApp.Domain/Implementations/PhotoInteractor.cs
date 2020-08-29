@@ -1,4 +1,5 @@
 ﻿using AlbumsWebApp.Domain.DomainInterfaces;
+using AlbumsWebApp.Domain.Presenters;
 using AlbumsWebApp.Domain.RepositoryInterfaces;
 using System;
 
@@ -11,7 +12,7 @@ namespace AlbumsWebApp.Domain.Implementations
         {
             photoRepository = repository ?? throw new ArgumentNullException("photoRepository");
         }
-        public void GetPhotosForAlbum(int albumId)
+        public void GetPhotosForAlbum(int albumId, IPhotoPresenter presenter)
         {
             if (albumId <= 0)
             { 
@@ -19,6 +20,7 @@ namespace AlbumsWebApp.Domain.Implementations
                 return;
             }
             var photos = photoRepository.GetAlbumPhotos(albumId);
+            presenter.SetPhotosResponse(photos);
         }
     }
 }

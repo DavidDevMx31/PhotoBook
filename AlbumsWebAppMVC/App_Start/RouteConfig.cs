@@ -17,7 +17,6 @@ namespace AlbumsWebAppMVC
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Albums", action = "Albums", id = UrlParameter.Optional }
-                //defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
