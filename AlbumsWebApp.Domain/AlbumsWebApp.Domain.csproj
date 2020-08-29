@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainInterfaces\IAlbumInteractor.cs" />
+    <Compile Include="DomainInterfaces\ICommentInteractor.cs" />
+    <Compile Include="DomainInterfaces\IPhotoInteractor.cs" />
+    <Compile Include="Implementations\AlbumInteractor.cs" />
+    <Compile Include="Implementations\CommentInteractor.cs" />
+    <Compile Include="Implementations\PhotoInteractor.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Photo.cs" />
