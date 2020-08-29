@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AlbumsWebApp", "AlbumsWebApp.vbproj", "{4CFE6EDB-E951-4C39-8C3B-D54A389280D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CFE6EDB-E951-4C39-8C3B-D54A389280D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFE6EDB-E951-4C39-8C3B-D54A389280D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFE6EDB-E951-4C39-8C3B-D54A389280D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFE6EDB-E951-4C39-8C3B-D54A389280D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {233A5DFC-0664-4808-B137-BCE8397C8C31}
+	EndGlobalSection
+EndGlobal
