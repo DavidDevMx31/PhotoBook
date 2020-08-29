@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlbumsWebApp.Domain.Presenters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace AlbumsWebApp.Domain.DomainInterfaces
 {
     public interface IPhotoInteractor
     {
-        void GetPhotosForAlbum(int albumId);
+        void GetPhotosForAlbum(int albumId, IPhotoPresenter presenter);
     }
 }
