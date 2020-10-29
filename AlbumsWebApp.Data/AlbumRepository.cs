@@ -18,7 +18,7 @@ namespace AlbumsWebApp.Data
                     Id = i,
                     Name = $"Album {i}",
                     Author = "The Rolling",
-                    ReleaseDate = new DateTime(2000,01,01)
+                    CreationDate = new DateTime(2000,01,01)
                 };
                 albums.Add(album);
             }

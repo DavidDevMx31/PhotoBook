@@ -17,11 +17,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Catálogo de música", "Albums", "Albums", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("PhotoBook", "Albums", "Albums", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Álbums", "Albums", "Albums")</li>
+                    <li>@Html.ActionLink("Álbumes", "Albums", "Albums")</li>
                 </ul>
             </div>
         </div>
@@ -30,7 +30,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Catálogo de música</p>
+            <p>&copy; @DateTime.Now.Year - PhotoBook</p>
         </footer>
     </div>
 
