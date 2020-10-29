@@ -9,19 +9,20 @@ namespace AlbumsWebApp.Data
     {
         public List<Album> GetAlbums()
         {
-            var albums = new List<Album>();
-            
-            for (int i = 0; i < 10; i++)
+            return CreateAlbumList();
+        }
+
+        private List<Album> CreateAlbumList()
+        {
+            var albums = new List<Album>()
             {
-                var album = new Album()
-                {
-                    Id = i,
-                    Name = $"Album {i}",
-                    Author = "The Rolling",
-                    CreationDate = new DateTime(2000,01,01)
-                };
-                albums.Add(album);
-            }
+                new Album() { Id = 1, Author = "John Doe", Name = "Halloween 2018", CreationDate = new DateTime(2018, 11, 05) },
+                new Album() { Id = 2, Author = "Alice Doe", Name = "Mexico", CreationDate = new DateTime(2019, 1, 15) },
+                new Album() { Id = 3, Author = "John Doe", Name = "City", CreationDate = new DateTime(2019, 3, 25) },
+                new Album() { Id = 4, Author = "John Doe", Name = "Landscapes", CreationDate = new DateTime(2019, 4, 05) },
+                new Album() { Id = 5, Author = "Alice Doe", Name = "Night shots", CreationDate = new DateTime(2019, 5, 18) },
+            };
+
             return albums;
         }
     }

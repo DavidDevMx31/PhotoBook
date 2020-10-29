@@ -1,5 +1,6 @@
 ﻿using AlbumsWebApp.Domain.Models;
 using AlbumsWebApp.Domain.Presenters;
+using AlbumsWebAppMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,22 +11,18 @@ namespace AlbumsWebAppMVC.Presenters
 {
     public class AlbumPresenter : IAlbumPresenter
     {
-        private List<SelectListItem> items;
-        public void SetAlbumResponse(List<Album> albums)
+        private List<AlbumViewModel> albums = new List<AlbumViewModel>();
+        public void SetAlbumResponse(List<Album> albumList)
         {
-            items = new List<SelectListItem>();
-            for (int i = 0; i < albums.Count; i++)
+            foreach (var album in albumList)
             {
-                var item = new SelectListItem() { 
-                    Text = $"{albums[i].Name} by {albums[i].Author}", 
-                    Value = albums[i].Id.ToString() };
-                items.Add(item);
+                albums.Add(new AlbumViewModel(album.Id, album.Name, album.Author, album.CreationDate));
             }
         }
 
-        internal List<SelectListItem> GetItems() 
+        internal List<AlbumViewModel> GetItems() 
         {
-            return items;
+            return albums;
         }
     }
 }
