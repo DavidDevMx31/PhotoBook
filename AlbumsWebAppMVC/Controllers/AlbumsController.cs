@@ -28,15 +28,8 @@ namespace AlbumsWebAppMVC.Controllers
         public ActionResult Albums()
         {
             interactor.GetAlbums(presenter);
-            ViewBag.albums = presenter.GetItems();
-            return View();
-        }
-
-        public JsonResult GetAlbums()
-        {
-            interactor.GetAlbums(presenter);
             var albums = presenter.GetItems();
-            return Json(albums, JsonRequestBehavior.AllowGet);
+            return View(albums);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<AlbumsWebAppMVC.Models.AlbumViewModel>
 @{
     ViewBag.Title = "Álbumes";
 }
@@ -18,5 +18,18 @@
             <th scope="col">Acciones</th>
         </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+        @foreach (var album in Model)
+        {
+        <tr>
+            <th scope="row">@album.Number</th>
+            <th>@album.Name</th>
+            <th>@album.Author</th>
+            <th>@album.CreationDate</th>
+            <th>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("GetAlbumPhotos", "Photos", new { albumId= album.Number })'">Ver álbum</button>
+            </th>
+        </tr>
+        }
+    </tbody>
 </table>

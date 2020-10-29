@@ -16,7 +16,6 @@ namespace AlbumsWebApp.Domain.Implementations
         {
             if (albumId <= 0)
             { 
-                //Error
                 return;
             }
             var photos = photoRepository.GetAlbumPhotos(albumId);

@@ -123,6 +123,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AlbumViewModel.cs" />
+    <Compile Include="Models\PhotoAlbumViewModel.cs" />
+    <Compile Include="Models\PhotoViewModel.cs" />
     <Compile Include="Presenters\AlbumPresenter.cs" />
     <Compile Include="Presenters\PhotoPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

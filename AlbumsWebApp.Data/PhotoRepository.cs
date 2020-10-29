@@ -11,7 +11,7 @@ namespace AlbumsWebApp.Data
             var photos = new List<Photo>();
             for (int i = 0; i < 8; i++)
             {
-                var photo = new Photo() { Id = i, Description = $"Photo number {i}" };
+                var photo = new Photo() { Id = i, Description = $"Photo number {i}", FileName = string.Empty };
                 photos.Add(photo);
             }
             return photos;

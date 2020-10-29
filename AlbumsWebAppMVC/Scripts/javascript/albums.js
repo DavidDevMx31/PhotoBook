@@ -1,6 +1,5 @@
 ﻿$(function () {
     console.log("Document ready!");
-    getAlbums();
 });
 
 function getAlbums() {
@@ -22,8 +21,4 @@ function getAlbums() {
             $("#albumsTable > tbody").append(rows.join(''));
         }
     });
-}
-
-function showAlbumPhotos(albumId) {
-    console.log("showAlbumPhotos " + albumId);
 }
