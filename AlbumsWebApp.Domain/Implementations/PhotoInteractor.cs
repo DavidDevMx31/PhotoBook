@@ -8,9 +8,11 @@ namespace AlbumsWebApp.Domain.Implementations
     public class PhotoInteractor : IPhotoInteractor
     {
         private readonly IPhotoRepository photoRepository;
-        public PhotoInteractor(IPhotoRepository repository)
+        private readonly IAlbumRepository albumRepository;
+        public PhotoInteractor(IPhotoRepository repository, IAlbumRepository albumRepository)
         {
             photoRepository = repository ?? throw new ArgumentNullException("photoRepository");
+            this.albumRepository = albumRepository ?? throw new ArgumentNullException("albumRepository");
         }
         public void GetPhotosForAlbum(int albumId, IPhotoPresenter presenter)
         {
@@ -18,8 +20,9 @@ namespace AlbumsWebApp.Domain.Implementations
             { 
                 return;
             }
+            var album = albumRepository.GetAlbum(albumId);
             var photos = photoRepository.GetAlbumPhotos(albumId);
-            presenter.SetPhotosResponse(photos);
+            presenter.SetPhotosResponse(album, photos);
         }
     }
 }

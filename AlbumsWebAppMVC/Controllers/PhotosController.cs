@@ -17,24 +17,28 @@ namespace AlbumsWebAppMVC.Controllers
         private readonly PhotoPresenter presenter;
         private readonly IPhotoInteractor interactor;
         private readonly IPhotoRepository repository;
+        private readonly IAlbumRepository albumRepository;
 
         public PhotosController()
         {
             presenter = new PhotoPresenter();
             repository = new PhotoRepository();
-            interactor = new PhotoInteractor(repository);
+            albumRepository = new AlbumRepository();
+            interactor = new PhotoInteractor(repository, albumRepository);
         }
         // GET: Photos
         public ActionResult Photos()
         {
-            return View();
+            interactor.GetPhotosForAlbum(0, presenter);
+            var photoAlbum = presenter.GetAlbumInfo();
+            return View(photoAlbum);
         }
 
         public ActionResult GetAlbumPhotos(int albumId)
         {
             interactor.GetPhotosForAlbum(albumId, presenter);
-            var result = presenter.GetAlbumPhotos();
-            return Json(result);
+            var photoAlbum = presenter.GetAlbumInfo();
+            return View("Photos", photoAlbum);
         }
     }
 }

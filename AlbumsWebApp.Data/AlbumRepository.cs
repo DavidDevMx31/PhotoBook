@@ -2,6 +2,7 @@
 using AlbumsWebApp.Domain.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AlbumsWebApp.Data
 {
@@ -11,7 +12,12 @@ namespace AlbumsWebApp.Data
         {
             return CreateAlbumList();
         }
-
+        public Album GetAlbum(int albumId)
+        {
+            var albums = CreateAlbumList();
+            var album = albums.SingleOrDefault(a => a.Id == albumId);
+            return album;
+        }
         private List<Album> CreateAlbumList()
         {
             var albums = new List<Album>()

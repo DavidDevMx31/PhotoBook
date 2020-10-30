@@ -1,19 +1,23 @@
-﻿
+﻿@model AlbumsWebAppMVC.Models.PhotoAlbumViewModel
 @{
     ViewBag.Title = "Photos";
 }
 
 <div class="container">
-    <div class="jumbotron">
-        <h1>Nombre del álbum</h1>
-        <p>Autor: </p>
+    <div style="display:flex; flex-direction:column; align-items:flex-end">
+        <h1 style="align-self: flex-start">@Model.Name</h1>
+        <p>Autor: @Model.Author</p>
+        <p>Creado el: @Model.CreationDate</p>
     </div>
 
     <div class="row">
-        <div class="col-lg-4 col-sm-6">
-            <div class="thumbnail">
-                <img src="https://source.unsplash.com/cPF2nlWcMY4">
+        @foreach (var photo in Model.Photos)
+        {
+            <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail">
+                    <img class="img-rounded" src="@photo.Value">
+                </div>
             </div>
-        </div>
+        }
     </div>
 </div>

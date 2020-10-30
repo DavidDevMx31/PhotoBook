@@ -6,5 +6,6 @@ namespace AlbumsWebApp.Domain.RepositoryInterfaces
     public interface IAlbumRepository
     {
         List<Album> GetAlbums();
+        Album GetAlbum(int albumId);
     }
 }
