@@ -5,6 +5,7 @@ namespace AlbumsWebApp.Domain.RepositoryInterfaces
 {
     public interface IPhotoRepository
     {
+        List<Photo> GetAllPhotos();
         List<Photo> GetAlbumPhotos(int albumId);
     }
 }

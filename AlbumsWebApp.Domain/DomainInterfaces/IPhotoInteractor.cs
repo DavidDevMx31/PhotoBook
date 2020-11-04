@@ -9,6 +9,7 @@ namespace AlbumsWebApp.Domain.DomainInterfaces
 {
     public interface IPhotoInteractor
     {
+        void GetAllPhotos(IPhotoPresenter presenter);
         void GetPhotosForAlbum(int albumId, IPhotoPresenter presenter);
     }
 }

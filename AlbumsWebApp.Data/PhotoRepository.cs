@@ -30,5 +30,10 @@ namespace AlbumsWebApp.Data
             var albumPhotos = allPhotos.Where(p => p.AlbumId == albumId);
             return albumPhotos.ToList();
         }
+
+        public List<Photo> GetAllPhotos()
+        {
+            return allPhotos;
+        }
     }
 }

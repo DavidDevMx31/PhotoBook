@@ -5,6 +5,7 @@ namespace AlbumsWebApp.Domain.Presenters
 {
     public interface IPhotoPresenter
     {
-        void SetPhotosResponse(Album album, List<Photo> albumPhotos);
+        void SetPhotosResponse(List<Photo> photos);
+        void SetPhotosForAlbumResponse(Album album, List<Photo> albumPhotos);
     }
 }

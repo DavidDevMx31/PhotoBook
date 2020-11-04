@@ -29,7 +29,7 @@ namespace AlbumsWebAppMVC.Controllers
         // GET: Photos
         public ActionResult Photos()
         {
-            interactor.GetPhotosForAlbum(0, presenter);
+            interactor.GetAllPhotos(presenter);
             var photoAlbum = presenter.GetAlbumInfo();
             return View(photoAlbum);
         }

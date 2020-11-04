@@ -13,11 +13,13 @@ namespace AlbumsWebAppMVC.Models
         public string CreationDate { get; private set; }
         public Dictionary<int, string> Photos { get; private set; }
 
-        public PhotoAlbumViewModel(string name, string author, DateTime creationDate)
+        public PhotoAlbumViewModel(string name, string author, DateTime? creationDate)
         {
             Name = name;
             Author = author;
-            CreationDate = creationDate.ToShortDateString();
+            CreationDate = creationDate.HasValue ? 
+                $"Creado el: {creationDate.Value.ToShortDateString()}" : 
+                string.Empty;
             Photos = new Dictionary<int, string>();
         }
 

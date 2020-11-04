@@ -11,13 +11,23 @@ namespace AlbumsWebAppMVC.Presenters
     {
         private PhotoAlbumViewModel photoAlbum;
 
-        public void SetPhotosResponse(Album album, List<Photo> albumPhotos)
+        public void SetPhotosForAlbumResponse(Album album, List<Photo> albumPhotos)
         {
             photoAlbum = new PhotoAlbumViewModel(album.Name, album.Author, album.CreationDate);
-            
-            for (int i = 0; i < albumPhotos.Count; i++)
+            FillViewModelPhotos(albumPhotos);
+        }
+
+        public void SetPhotosResponse(List<Photo> photos)
+        {
+            photoAlbum = new PhotoAlbumViewModel("", "Varios", null);
+            FillViewModelPhotos(photos);
+        }
+
+        private void FillViewModelPhotos(List<Photo> photos)
+        {
+            for (int i = 0; i < photos.Count; i++)
             {
-                photoAlbum.Photos.Add(albumPhotos[i].Id, albumPhotos[i].FileName);
+                photoAlbum.Photos.Add(photos[i].Id, photos[i].FileName);
             }
         }
 
