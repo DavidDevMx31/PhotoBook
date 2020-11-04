@@ -7,16 +7,7 @@ namespace AlbumsWebApp.Data
 {
     public class PhotoRepository : IPhotoRepository
     {
-        public List<Photo> GetAlbumPhotos(int albumId)
-        {
-            var allPhotos = CreatePhotos();
-            var albumPhotos = allPhotos.Where(p => p.AlbumId == albumId);
-            return albumPhotos.ToList();
-        }
-
-        private List<Photo> CreatePhotos()
-        {
-            var photos = new List<Photo>() 
+        private static List<Photo> allPhotos = new List<Photo>()
             {
                 //Halloween
                 new Photo() { Id = 1, Description = "Photo by <a href=\"https://unsplash.com/@paige_cody?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText\">Paige Cody</a>", FileName = "https://source.unsplash.com/hiuBsBPPquE", AlbumId = 1 },
@@ -33,7 +24,11 @@ namespace AlbumsWebApp.Data
                 //Night shots
                 new Photo() { Id = 9, Description = "Photo by <a href=\"https://unsplash.com/@actionjackson801?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText\">Jackson Hendry</a>", FileName = "https://source.unsplash.com/eodA_8CTOFo", AlbumId = 5 },
             };
-            return photos;
+
+        public List<Photo> GetAlbumPhotos(int albumId)
+        {
+            var albumPhotos = allPhotos.Where(p => p.AlbumId == albumId);
+            return albumPhotos.ToList();
         }
     }
 }
