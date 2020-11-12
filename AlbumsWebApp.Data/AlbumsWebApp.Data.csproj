@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlbumRepository.cs" />
-    <Compile Include="CommentRepository.cs" />
     <Compile Include="PhotoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
